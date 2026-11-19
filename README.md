@@ -546,6 +546,15 @@ The team lead: repo + branch rules + seed
                                             └─> The report lead: IEEE report + deck
 ```
 
+### Presentation split (Phase 1)
+
+| Person | Original owner(s) | What they handle | Files | Viva theory topic |
+| :--- | :--- | :--- | :--- | :--- |
+| **Jigyasu** | Taj | Repo setup, config, data dictionary, cleaning, EDA | `src/config.py`, `src/clean.py`, `docs/data_dictionary.md`, `notebooks/01_cleaning`, `02_eda`, `tests/test_clean.py` | Missing data, duplicates, impossible values, the median-imputation finding |
+| **Manya** | Parthraj, Himanshu (features) | Target definition, leakage-safe split, preprocessing, feature engineering | `docs/target_definition.md`, `src/split.py`, `src/preprocess.py`, `src/features.py`, `src/evaluate_api.py`, `tests/test_split.py`, `test_preprocess.py`, `test_features.py` | CCME formula, data leakage, area-grouped split, fitting on train only |
+| **Satyam** | Himanshu (RF), Jivit | Random Forest, XGBoost, tuning, ablation | `src/models_rf.py`, `src/models_xgb.py`, `notebooks/04_random_forest`, `05_xgboost`, `reports/rf_results.csv`, `xgb_results.csv`, `xgb_ablation.csv` | Bagging vs boosting, Optuna tuning, early stopping |
+| **Aditya** | Satya, Parthraj (evaluation) | Metrics, naive baseline, final evaluation, SHAP, report and presentation | `src/metrics.py`, `src/evaluation.py`, `src/run_evaluation.py`, `notebooks/03_naive_baseline`, `06_evaluation`, `results/`, `report/`, `presentation/` | MAE/RMSE/R², baseline, SHAP, the partial-measurement result (R² 0.9997 → 0.834 → 0.573) |
+
 ---
 
 ## 9. Contributing workflow
