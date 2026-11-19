@@ -1,0 +1,56 @@
+# Data — raw dataset tracked via Git LFS; processed and splits remain uncommitted
+data/raw/*
+data/processed/*
+data/splits/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/splits/.gitkeep
+!data/raw/Combined_dataset.csv
+# The cleaned table is committed as parquet only (45 MB, plain git).
+# clean.csv stays ignored: 559 MiB exceeds GitHub's 100 MB plain-git limit, and via LFS
+# it would consume most of the free 1 GiB quota. Regenerate it with: python -m src.clean
+!data/processed/clean.parquet
+
+# Trained models
+models/
+checkpoints/
+*.pkl
+*.joblib
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Optuna / experiment artefacts
+*.db
+optuna_study/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# LaTeX build artefacts; the compiled PDF is committed at
+# report/water_quality_prediction_phase1_report.pdf
+report/build/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.bbl
+*.blg
+
+# Local work plan
+Water Quality Prediction Phase 1 Work Plan.pdf
